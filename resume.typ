@@ -56,7 +56,7 @@ Agentic AI and applied data science innovation.
   ]
 
    #project-heading("Rapidoc – AI-Driven RAG Document Intelligence | Aug 2025")[
-  - Web-based RAG 2.0 system showcasing intelligent document retrieval and AI-powered content generation.  
+  - Web-based RAG system showcasing intelligent document retrieval and AI-powered content generation.  
   - Engineered advanced retrieval augmented generation pipeline for dynamic information extraction.  
   - Live: #link(
       "https://krishnanaicker.github.io/Rapidoc/",
