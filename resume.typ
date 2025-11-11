@@ -5,15 +5,18 @@
 #let email = "krishnanaicker2005@gmail.com"
 #let github = "KrishnaNaicker"
 #let linkedin = "krishnanaicker29"
+#let personal-site="krishnanaicker.dev"
+
 
 #show: resume.with(
   top-margin: 0.45in,
-  personal-info-font-size: 9.2pt,
+  personal-info-font-size: 9.0pt,
   author-position: center,
   personal-info-position: center,
   author-name: name,
   phone: phone,
   email: email,
+  website: personal-site,
   linkedin-user-id: linkedin,
   github-username: github
 )
