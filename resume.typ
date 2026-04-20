@@ -81,7 +81,7 @@ powered applications. Focused on RAG pipelines, agentic workflows, and scalable 
   ]
 
   #project-heading("HealthEase – AI Healthcare Platform | Apr 2025")[
-    - Developed an AI-driven healthcare platform integrating research summarization, symptom analysis, and RAG pipelines.
+    - A AI driven healthcare platform: Research summarization, symptom analysis, RAG.
     - *Live Demo:* #link("https://healthease.streamlit.app/")[healthease.streamlit.app] | 
       *GitHub:* #link("https://github.com/KrishnaNaicker/HealthEase")[github.com/KrishnaNaicker/HealthEase]
   ]
@@ -98,6 +98,7 @@ powered applications. Focused on RAG pipelines, agentic workflows, and scalable 
 ]
 
 #custom-title("Honors & Leadership")[
+  - *3rd Winner:* Pragyantra National level Hackathon, 130+ teams, Team Lead.
   - *National Rank 236:* HackRx 6.0 (Bajaj Finserv).  
   - *Rank 25:* SIH Internal Hackathon 2025 (Prostart), Team Lead.  
   - *Rank 23:* GeeksVishwa technical symposium (VIIT).
