@@ -1,105 +1,286 @@
-#import "@preview/simple-technical-resume:0.1.0": *
+// Krishna Kumar K. Naicker — ATS-friendly one-page resume
+// Build: typst compile krishna_naicker_resume_final.typ krishna_naicker_resume.pdf
 
-#show link: set text(fill: rgb("#1155cc"))
+#let ink = rgb("#111111")
+#let soft = rgb("#4a4a4a")
+#let rule-color = rgb("#b8b8b8")
+#let link-blue = rgb("#1155cc")
 
-#let name = "KRISHNA KUMAR K. NAICKER"
-#let phone = "+91 9172631857"
-#let email = "krishnanaicker2005@gmail.com"
-#let github = "KrishnaNaicker"
-#let linkedin = "krishnanaicker29"
-
-#show: resume.with(
-  top-margin: 0.35in,
-  personal-info-font-size: 9pt,
-  author-position: center,
-  personal-info-position: center,
-  author-name: name,
-  phone: phone,
-  email: email,
-  linkedin-user-id: linkedin,
-  github-username: github
+#set document(
+  title: "Krishna Kumar K. Naicker — Full-Stack AI Engineer",
+  author: "Krishna Kumar K. Naicker",
+  keywords: (
+    "full-stack AI engineer",
+    "software engineer",
+    "machine learning engineer",
+    "agentic AI",
+    "RAG",
+    "LangGraph",
+    "FastAPI",
+    "React",
+    "Python",
+    "TypeScript",
+  ),
 )
 
+#set page(
+  paper: "a4",
+  margin: (x: 0.48in, top: 0.32in, bottom: 0.29in),
+)
+
+#set text(
+  font: "Libertinus Serif",
+  size: 10.5pt,
+  fill: ink,
+  lang: "en",
+  top-edge: 0.72em,
+  bottom-edge: -0.16em,
+)
+
+#set par(justify: false, leading: 0.22em, spacing: 0.1em)
+#show link: set text(fill: link-blue)
+
+#let linked-label(url, label) = link(
+  url,
+  underline(
+    stroke: 0.45pt + link-blue,
+    offset: 1.25pt,
+    text(weight: "bold", label),
+  ),
+)
+
+#let section(title) = {
+  v(5.8pt)
+  block(
+    below: 3.9pt,
+    stack(
+      spacing: 1.6pt,
+      text(size: 9pt, weight: "bold", upper(title)),
+      line(length: 100%, stroke: 0.55pt + rule-color),
+    ),
+  )
+}
+
+#let heading-row(left-body, right-body) = block(
+  below: 1.7pt,
+  breakable: false,
+  grid(
+    columns: (1fr, auto),
+    column-gutter: 12pt,
+    align: (left, right),
+    left-body,
+    text(size: 8.85pt, fill: soft, right-body),
+  ),
+)
+
+#let points(..items) = {
+  let bodies = items.pos()
+  stack(
+    spacing: 1.9pt,
+    ..bodies.map(body => grid(
+      columns: (11pt, 1fr),
+      column-gutter: 0pt,
+      text(fill: soft)[•],
+      par(leading: 0.22em, body),
+    )),
+  )
+}
+
+#let project-heading(name, url, descriptor, date) = heading-row(
+  [
+    #linked-label(url, name)
+    #h(4pt)#text(fill: soft)[|]#h(4pt)
+    #descriptor
+  ],
+  [#date],
+)
+
+// ── Header ────────────────────────────────────────────────────────────
 #align(center)[
-  #text(size: 10pt, weight: "bold")[Full Stack AI Engineer] \
-  #text(size: 9pt)[#link("https://www.krishnanaicker.dev/")[krishnanaicker.dev] | Pune, India]
-]
+  #text(size: 25.9pt, weight: "semibold")[KRISHNA KUMAR K. NAICKER]
 
-#custom-title("Professional Summary")[
-Full Stack AI Engineer with hands-on experience building production-grade systems and deploying AI
-powered applications. Focused on RAG pipelines, agentic workflows, and scalable full-stack architectures.
-]
+  #v(2pt)
 
-#custom-title("Professional Experience")[
-  #block[
-    #grid(columns: (1fr, auto),
-      [*AllCognix AI* | Full Stack Engineer],
-      [Jan 2026 – Present]
-    )
-    #text(size: 9pt, style: "italic")[Product-lead • Core platform: Agent Studio]
-  ]
-  #v(1pt)
-  - Leading development of Agent Studio, a core platform product for building and orchestrating AI agents.
-  - Driving product decisions and end-to-end implementation across agent workflows, backend services, and integrations.
-
-  #v(4pt)
-
-  #block[
-    #grid(columns: (1fr, auto),
-      [*Omnineura AI Technologies* | Gen AI Full Stack Engineer],
-      [Nov 2025 – Jan 2026]
-    )
-    #text(size: 9pt, style: "italic")[Bengaluru, India (Remote)]
-  ]
-  #v(1pt)
-  - Architecting enterprise AI solutions by integrating LLMs with high-availability full-stack architectures.
-  - Designing autonomous AI agents with LangGraph and CrewAI to automate complex multi-step healthcare workflows.
-]
-
-#custom-title("Technical Skills")[
-  - *Languages:* Python, C++, JavaScript, TypeScript, SQL  
-  - *AI & Machine Learning:* PyTorch, TensorFlow, LangChain, LangGraph, CrewAI, LoRA, BERT, RAG  
-  - *Full-Stack Development:* FastAPI, Node.js, React.js, Next.js, Streamlit, HTML5/CSS3, Tailwind, Vite, Zustand, REST APIs, WebSockets  
-  - *Databases & Caching:* MongoDB, PostgreSQL, MySQL, Redis, Vector DBs (Pinecone)  
-  - *Workflow & Orchestration:* Celery, Taskiq, Haystack, DBOS, Composio  
-  - *Infrastructure:* Docker, Git
-]
-
-#custom-title("Featured Projects")[
-  #project-heading("CareFlow & HealBERT – Advanced Agentic AI Systems | 2025")[
-    - *CareFlow:* Built a multi-agent healthcare workflow system using *LangGraph* for autonomous orchestration.
-    - *HealBERT:* Developed a self-healing emotion classifier with sarcasm detection and *LoRA* fine-tuning.
-    - *Links:* 
-      #link("https://github.com/KrishnaNaicker/healthcare-ai-agents")[CareFlow GitHub] | 
-      #link("https://github.com/KrishnaNaicker/self-healing-dag")[HealBERT GitHub]
+  #text(size: 11.3pt, weight: "bold")[
+    Full-Stack AI Engineer 
   ]
 
-  #project-heading("Rapidoc – Intelligent RAG 2.0 Infrastructure | Aug 2025")[
-    - Built a low-latency RAG system for structured information extraction using FastAPI and vector embeddings.
-    - *Live Demo:* #link("https://krishnanaicker.github.io/Rapidoc/")[krishnanaicker.github.io/Rapidoc] | 
-      *GitHub:* #link("https://github.com/KrishnaNaicker/Rapidoc")[github.com/KrishnaNaicker/Rapidoc]
+  #v(3.5pt)
+
+  #text(size: 9pt, fill: soft)[
+    Pune, India #h(5pt)#text(fill: rule-color)[|]#h(5pt)
+    +91 9172631857 #h(5pt)#text(fill: rule-color)[|]#h(5pt)
+    #linked-label("https://www.krishnanaicker.dev/", "krishnanaicker.dev")
   ]
 
-  #project-heading("HealthEase – AI Healthcare Platform | Apr 2025")[
-    - A AI driven healthcare platform: Research summarization, symptom analysis, RAG.
-    - *Live Demo:* #link("https://healthease.streamlit.app/")[healthease.streamlit.app] | 
-      *GitHub:* #link("https://github.com/KrishnaNaicker/HealthEase")[github.com/KrishnaNaicker/HealthEase]
+  #v(1.8pt)
+
+  #text(size: 8.95pt, fill: soft)[
+    #linked-label("mailto:krishnanaicker2005@gmail.com")[krishnanaicker2005\@gmail.com]
+    #h(5pt)#text(fill: rule-color)[|]#h(5pt)
+    #linked-label("https://www.linkedin.com/in/krishnanaicker29", "LinkedIn")
+    #h(5pt)#text(fill: rule-color)[|]#h(5pt)
+    #linked-label("https://github.com/KrishnaNaicker", "GitHub")
   ]
 ]
 
-#custom-title("Education")[
-  #education-heading(
-    "P.E.S Modern College of Engineering (SPPU)", "Pune, India",
-    "Bachelor of Engineering", "Artificial Intelligence and Data Science",
-    datetime(year: 2023, month: 8, day: 1), datetime(year: 2027, month: 6, day: 1)
-  )[
-    - *Current CGPA:* 9.31 (Sem 1–5)
+#v(7.0pt)
+
+Full-Stack AI Engineer with hands-on experience building agent orchestration platforms,
+retrieval systems, and production web services. Owns features end to end—from workflow design and APIs
+to data pipelines, integrations, evaluation, and deployment—using Python, TypeScript, FastAPI, React,
+LangGraph, PostgreSQL and Docker.
+#v(4.3pt)
+// ── Experience ────────────────────────────────────────────────────────
+#section("Experience")
+#v(4.3pt)
+#block(breakable: false)[
+  #heading-row(
+    [*AllCognix AI* #h(4pt) #text(fill: soft)[|] #h(4pt) Full-Stack Engineer Intern],
+    [Jan 2026 – Present],
+  )
+  #text(size: 8.7pt, style: "italic", fill: soft)[
+    *Product Lead — Orkus* · Agent-building and orchestration platform
   ]
+  #v(2.7pt)
+  #points(
+    [Leading *Orkus*, a platform for designing, configuring, and orchestrating AI agents; translating
+     product requirements into workflow primitives, backend services, integrations, and user-facing tooling.],
+    [Owning features across architecture, implementation, debugging, and release, with emphasis on
+     reusable agent workflows, reliable execution, and extensible platform contracts.],
+  )
 ]
 
-#custom-title("Honors & Leadership")[
-  - *3rd Winner:* Pragyantra National level Hackathon, 130+ teams, Team Lead.
-  - *National Rank 236:* HackRx 6.0 (Bajaj Finserv).  
-  - *Rank 25:* SIH Internal Hackathon 2025 (Prostart), Team Lead.  
-  - *Rank 23:* GeeksVishwa technical symposium (VIIT).
+#v(5pt)
+
+#block(breakable: false)[
+  #heading-row(
+    [*Omnineura AI Technologies* #h(4pt) #text(fill: soft)[|] #h(4pt) GenAI Full-Stack Engineer Intern],
+    [Nov 2025 – Jan 2026],
+  )
+  #text(size: 8.7pt, style: "italic", fill: soft)[Bengaluru, India · Remote]
+  #v(2.7pt)
+  #points(
+    [Architected full-stack LLM applications and autonomous agents with *LangGraph* and *CrewAI* for
+     multi-step healthcare workflows, integrating model calls, stateful routing, validation, and failure handling.],
+    [Built backend APIs, data flows, and responsive interfaces for enterprise AI prototypes while
+     maintaining clear service boundaries and production-oriented error handling.],
+  )
 ]
+#v(4.3pt)
+// ── Projects ──────────────────────────────────────────────────────────
+#section("Featured Projects")
+#v(4.3pt)
+#block(breakable: false)[
+  #project-heading(
+    "AssetFlow",
+    "https://github.com/Harsh-4210/Team-Artemis-",
+    [Enterprise Asset & Resource Management],
+    [July 2026],
+  )
+  #points(
+    [Built a TypeScript/PostgreSQL ERP module with RBAC, atomic asset transfers, overlap-safe bookings,
+     approval-gated maintenance, audit cycles, notifications, and activity logs; enforced business rules
+     in the Express/Prisma service layer and surfaced them through a React interface.],
+  )
+]
+
+#v(4.3pt)
+
+#block(breakable: false)[
+  #project-heading(
+    "Support Triage Agent",
+    "https://github.com/KrishnaNaicker/Support-Triage-Agent",
+    [Safety-First RAG Pipeline],
+    [May 2026],
+  )
+  #points(
+    [Built a five-stage CLI agent that classifies safety *before retrieval*, isolates ChromaDB search by
+     domain, and generates corpus-grounded responses with deterministic structured outputs; indexed
+     *773 source files into 1,962 chunks* using local MiniLM embeddings and human escalation.],
+  )
+]
+
+#v(4.3pt)
+
+#block(breakable: false)[
+  #project-heading(
+    "TraceLink",
+    "https://github.com/KrishnaNaicker/TraceLink",
+    [Offline Manufacturing Traceability],
+    [Apr 2026],
+  )
+  #points(
+    [Engineered a zero-dependency, offline-first trace engine linking material lots, production batches,
+     QC inspections, dispatch orders, and OEM complaints; added confidence-scored recovery for
+     *678 missing batch IDs* and measured a *0.3 ms* trace lookup.],
+  )
+]
+#v(4.3pt)
+
+#block(breakable: false)[
+  #heading-row(
+    [
+      #linked-label("https://github.com/KrishnaNaicker/healthcare-ai-agents", "CareFlow")
+      #h(3pt)#text(fill: soft)[&]#h(3pt)
+      #linked-label("https://github.com/KrishnaNaicker/self-healing-dag", "HealBERT")
+      #h(4pt)#text(fill: soft)[|]#h(4pt) Agentic Healthcare & Self-Healing ML
+    ],
+    [Nov 2025],
+  )
+  #points(
+    [Fine-tuned DistilBERT with LoRA (*approximately 2% of parameters trainable*) and built a LangGraph
+     confidence-routed fallback pipeline for sarcasm and edge cases; separately orchestrated four healthcare
+     agents for intake, emergency-risk classification, specialist routing, and patient-facing care plans.],
+  )
+]
+
+#v(4.3pt)
+
+#block(breakable: false)[
+  #project-heading(
+    "HealthEase",
+    "https://github.com/KrishnaNaicker/HealthEase",
+    [AI Healthcare Platform],
+    [Apr 2025],
+  )
+  #points(
+    [Shipped a Streamlit/MongoDB application with authenticated role-based access, PDF research
+     summarization, symptom analysis, longitudinal wellness tracking, and persistent user history.
+    ],
+  )
+]
+#v(4.3pt)
+// ── Skills ────────────────────────────────────────────────────────────
+#section("Technical Skills")
+#v(4.3pt)
+#points(
+  [*Languages* #h(4pt) Python, TypeScript, JavaScript, C++, SQL],
+  [*AI & ML* #h(4pt) PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LangGraph, CrewAI,
+   RAG, LoRA, BERT, sentence-transformers],
+  [*Backend & Data* #h(4pt) FastAPI, Node.js, Express, REST APIs, WebSockets, Celery, Taskiq,
+   PostgreSQL, MongoDB, MySQL, Redis, Pinecone, ChromaDB],
+  [*Frontend & Infrastructure* #h(4pt) React, Next.js, Streamlit, Tailwind CSS, Zustand,
+   TanStack Query, Docker, Git],
+)
+#v(4.3pt)
+// ── Education ─────────────────────────────────────────────────────────
+#section("Education")
+#v(4.3pt)
+#block(breakable: false)[
+  #heading-row(
+    [*B.E. Artificial Intelligence and Data Science* #h(4pt) #text(fill: soft)[|] #h(4pt) P.E.S. Modern College of Engineering (SPPU)],
+    [Aug 2023 – Jun 2027],
+  )
+  #text(size: 8.9pt)[Pune, India · *CGPA: 9.36* (Semesters 1–6)]
+]
+#v(4.3pt)
+// ── Achievements ──────────────────────────────────────────────────────
+#section("Achievements")
+#v(4.3pt)
+#points(
+  [*Ranked 158 of 1,349 participants* in HackerRank Orchestrate.],
+  [Selected among the *Top 20 teams* at the MCCIA AI Hackathon 2026.],
+  [Won *3rd place* at the Pragyantra National-Level Hackathon among 130+ teams as Team Lead.],
+  [Achieved *National Rank 236* in HackRx 6.0 by Bajaj Finserv.],
+)
