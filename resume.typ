@@ -255,13 +255,12 @@ LangGraph, PostgreSQL and Docker.
 #section("Technical Skills")
 #v(4.3pt)
 #points(
-  [*Languages* #h(4pt) Python, TypeScript, JavaScript, C++, SQL],
-  [*AI & ML* #h(4pt) PyTorch, TensorFlow, Hugging Face Transformers, LangChain, LangGraph, CrewAI,
-   RAG, LoRA, BERT, sentence-transformers],
-  [*Backend & Data* #h(4pt) FastAPI, Node.js, Express, REST APIs, WebSockets, Celery, Taskiq,
-   PostgreSQL, MongoDB, MySQL, Redis, Pinecone, ChromaDB],
-  [*Frontend & Infrastructure* #h(4pt) React, Next.js, Streamlit, Tailwind CSS, Zustand,
-   TanStack Query, Docker, Git],
+  [*Languages* #h(4pt) Python, JavaScript, C++, SQL],
+  [*AI & ML* #h(4pt) PyTorch, TensorFlow, Transformers, LangChain, LangGraph, CrewAI,
+   RAG, LoRA, BERT],
+  [*Backend & Data* #h(4pt) FastAPI, Node.js, Express, REST APIs, Celery,
+   PostgreSQL, MongoDB, MySQL, Redis, Pinecone],
+  [*Frontend & Infrastructure* #h(4pt) React, Next.js, Streamlit, Tailwind CSS, Docker, Git],
 )
 #v(4.3pt)
 // ── Education ─────────────────────────────────────────────────────────
@@ -279,7 +278,8 @@ LangGraph, PostgreSQL and Docker.
 #section("Achievements")
 #v(4.3pt)
 #points(
-  [*Ranked 158 of 1,349 participants* in HackerRank Orchestrate.],
+  [*Finalist*, Odoo Hackathon 2026 - *Ranked 85th* among 857 teams, selected from 20,000+ registrations.],
+  [*Ranked 158 out of 1,349 participants* in HackerRank Orchestrate.],
   [Selected among the *Top 20 teams* at the MCCIA AI Hackathon 2026.],
   [Won *3rd place* at the Pragyantra National-Level Hackathon among 130+ teams as Team Lead.],
   [Achieved *National Rank 236* in HackRx 6.0 by Bajaj Finserv.],
